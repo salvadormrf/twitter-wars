@@ -21,8 +21,8 @@ Make sure you have memcached and virtualenv installed
 sudo apt-get install memcached
 sudo apt-get install python-virtualenv
 
-mkdir -p idio/twitter_wars
-cd idio
+mkdir company_xyz
+cd company_xyz
 virtualenv env
 source env/bin/activate
 
@@ -31,36 +31,39 @@ pip install pyenchant
 pip install celery
 pip install python-memcached
 pip install Flask
+
+git clone https://github.com/salvadormrf/twitter-wars.git
+
 </pre>
 
 
 ###### Runnning
 
 <pre>
-Start Celery
+Start Celery (on a new terminal)
 
-cd idio
+cd company_xyz
 source env/bin/activate
-cd twitter_wars
+cd twitter-wars
 celery -A tasks worker --loglevel=info
 </pre>
 
 <pre>
-Start Tweet Listener agent
+Start Tweet Listener agent (on a new terminal)
 
-cd idio
+cd company_xyz
 source env/bin/activate
-cd twitter_wars
+cd twitter-wars
 python tweet_scanner.py
 </pre>
 
 
 <pre>
-Start Web app
+Start Web app (on a new terminal)
 
-cd idio
+cd company_xyz
 source env/bin/activate
-cd twitter_wars
+cd twitter-wars
 python views.py
 </pre>
 
