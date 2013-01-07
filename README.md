@@ -66,9 +66,15 @@ python views.py
 
 
 
-
-
-
+#### Comments 
+  - Hashtags and Mentions are cleaned using enchant tokenizer Filters
+  - I use only tweets with geo information given by Twitter Streaming API, others are ignored
+  - 
+  - Workflow: we remove hashtags and mentions and we check if the word exists in english dictionary
+  - 
+  - Next iterations
+  - check in what language the tweet is (some tweets are not not in English...)
+  - Use a dictionary of people name's. (some tweets words are about famous people...)
 
 
 
