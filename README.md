@@ -96,7 +96,7 @@ Example result:
   - 
   - tweet_scanner.py listens for tweets from London and Exeter and creates a task
   - analyser.py utility functions to check how many invalid words exists in a tweet
-  - views.py simple Flash application to show collected information
+  - views.py simple Flask application to show collected information
   - tasks.py Celery tasks
   - 
   - Workflow: When a tweet is received, it is automatically created an assynchronous task to analyse the tweet.
