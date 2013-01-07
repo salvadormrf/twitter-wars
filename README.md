@@ -65,6 +65,27 @@ python views.py
 </pre>
 
 
+<pre>
+http://127.0.0.1:5000/
+
+Example result:
+
+{
+  "london": {
+    "tweets": 667, 
+    "city": "LONDON", 
+    "invalid_words": 863, 
+    "errors_per_tweet": 1.2938530734632683
+  }, 
+  "exeter": {
+    "tweets": 8, 
+    "city": "EXETER", 
+    "invalid_words": 7, 
+    "errors_per_tweet": 0.875
+  }
+}
+</pre>
+
 
 #### Comments 
   - Hashtags and Mentions are cleaned using enchant tokenizer Filters
@@ -84,7 +105,7 @@ python views.py
   - 
   - 
   - Next iterations
-  - check in what language the tweet is (some tweets are not not in English...)
+  - check in what language the tweet is (some tweets are not in English...)
   - Use a dictionary of people name's. (some tweets words are about famous people...)
 
 
