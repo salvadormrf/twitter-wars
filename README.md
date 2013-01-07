@@ -100,11 +100,12 @@ Example result:
   - tasks.py Celery tasks
   - 
   - Workflow: When a tweet is received, it is automatically created an assynchronous task to analyse the tweet.
-  - When the task to analyse starts, the analyser removes hashtags and mentions and checks if all words exists in english dictionary
+  - When the task starts, the analyser removes all hashtags, mentions and urls. 
+  - And then it checks for all words, to verify if the word exists in english dictionary
   - Then it saves the results to a central place (in a memecache database)
   - 
-  - 
-  - --- Tweet ----> Analyser -----> DB results <---- Web APP
+  -
+  -    New tweet ----> Task analyser -----> DB results <---- Web APP
   - 
   - 
   - Next iterations
