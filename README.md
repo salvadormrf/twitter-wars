@@ -70,7 +70,18 @@ python views.py
   - Hashtags and Mentions are cleaned using enchant tokenizer Filters
   - I use only tweets with geo information given by Twitter Streaming API, others are ignored
   - 
-  - Workflow: we remove hashtags and mentions and we check if the word exists in english dictionary
+  - tweet_scanner.py listens for tweets from London and Exeter and creates a task
+  - analyser.py utility functions to check how many invalid words exists in a tweet
+  - views.py simple Flash application to show collected information
+  - tasks.py Celery tasks
+  - 
+  - Workflow: When a tweet is received, it is automatically created an assynchronous task to analyse the tweet.
+  - When the task to analyse starts, the analyser removes hashtags and mentions and checks if all words exists in english dictionary
+  - Then it saves the results to a central place (in a memecache database)
+  - 
+  - 
+  - --- Tweet ----> Analyser -----> DB results <---- Web APP
+  - 
   - 
   - Next iterations
   - check in what language the tweet is (some tweets are not not in English...)
